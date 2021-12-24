@@ -25,24 +25,25 @@ class DetailListViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        3
+        2
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        persons[section].fullName
     }
 
-   
     override func tableView(
         _ tableView: UITableView,
         cellForRowAt indexPath: IndexPath
     ) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "personsDetail", for: indexPath)
-     
+        
         var content = cell.defaultContentConfiguration()
         
         switch indexPath.row {
+            
         case 0:
-            content.text = persons[indexPath.section].fullName
-            content.textProperties.color = .gray
-        case 1:
             content.text = persons[indexPath.section].telephone
             content.textProperties.font = UIFont(name: "Helvetica", size: 20)
             ?? UIFont()
