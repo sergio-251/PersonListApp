@@ -92,7 +92,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oxS-98-dza" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-57" y="368"/>
+            <point key="canvasLocation" x="903" y="-386"/>
         </scene>
         <!--Detail List View Controller-->
         <scene sceneID="KBC-VD-epL">
@@ -103,12 +103,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="personsDetail" id="cxV-EQ-riG">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="personsDetail" textLabel="GPa-dc-b1Y" detailTextLabel="Lm1-dp-6og" style="IBUITableViewCellStyleSubtitle" id="cxV-EQ-riG">
                                 <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cxV-EQ-riG" id="JyZ-Bf-pS8">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GPa-dc-b1Y">
+                                            <rect key="frame" x="20" y="6" width="25" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Lm1-dp-6og">
+                                            <rect key="frame" x="20" y="22.5" width="40.5" height="13.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -117,11 +133,11 @@
                             <outlet property="delegate" destination="uvE-R0-pn7" id="p4n-Hk-g6f"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" systemItem="topRated" id="Y82-iS-3Fx"/>
+                    <tabBarItem key="tabBarItem" systemItem="contacts" id="Y82-iS-3Fx"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lm2-dM-cCd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="812" y="-386"/>
+            <point key="canvasLocation" x="-967" y="449"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cNm-WA-CTl">
@@ -139,12 +155,12 @@
             </objects>
             <point key="canvasLocation" x="-1855" y="-386"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Personal List-->
         <scene sceneID="MJJ-yu-bm0">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="4fO-cV-Iwp" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="4fO-cV-Iwp" customClass="TabBarViewController" customModule="PersonList" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="WuD-k5-lyz"/>
+                    <navigationItem key="navigationItem" title="Personal List" id="WuD-k5-lyz"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jtV-aa-Yfe">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>

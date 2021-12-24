@@ -8,7 +8,7 @@
 import Foundation
 
 class DataManager {
-    private var names = [
+    let names = [
         "Sergey",
         "Ivan",
         "Alexey",
@@ -20,7 +20,7 @@ class DataManager {
         "Egor"
     ]
     
-    private var surnames = [
+    let surnames = [
         "Ivanov",
         "Petrov",
         "Sidorov",
@@ -32,7 +32,7 @@ class DataManager {
         "Magomedov"
     ]
     
-    private var telephones = [
+    let telephones = [
     "+7(999)012-34-56",
     "+7(111)987-65-43",
     "+7(911)911-00-00",
@@ -44,7 +44,7 @@ class DataManager {
     "+7(555)127-89-42"
     ]
     
-    private var emails = [
+    let emails = [
     "privet@qwerty.com",
     "my@swift.org",
     "persons@allo.me",
@@ -55,35 +55,6 @@ class DataManager {
     "write@please.me",
     "soso@dot.com"
     ]
-    
-    func getPersons() -> [Person] {
-        var resultPersonList: [Person] = []
-        for _ in 0...(names.count-1) {
-            resultPersonList.append(Person(
-                name: getRandomName(),
-                surname: getRandomSurname(),
-                telephone: getRandomTelephone(),
-                email: getRandomEmail()
-            ))
-        }
-        return resultPersonList
-    }
-    
-    private func getRandomName() -> String {
-        names.remove(at: Int.random(in: 0...(names.count-1)))
-    }
-    
-    private func getRandomSurname() -> String {
-        surnames.remove(at: Int.random(in: 0...(surnames.count-1)))
-    }
-    
-    private func getRandomTelephone() -> String {
-        telephones.remove(at: Int.random(in: 0...(telephones.count-1)))
-    }
-    private func getRandomEmail() -> String {
-        emails.remove(at: Int.random(in: 0...(emails.count-1)))
-    }
-    
 }
 
 

@@ -7,23 +7,27 @@
 
 import UIKit
 
+
+
 class PersonListViewController: UITableViewController {
     
-    private let persons = DataManager().getPersons()
+    var persons: [Person]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = 100
     }
+
+    
 }
 
-    // MARK: - Table view data source
-    extension PersonListViewController {
-
+// MARK: - Table view data source
+extension PersonListViewController {
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return persons.count
+        persons.count
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "personID", for: indexPath)
         
@@ -35,13 +39,12 @@ class PersonListViewController: UITableViewController {
         
         return cell
     }
-
-        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            if let detailPersonVC = segue.destination as? DetailPersonViewController {
-                guard let indexPath = tableView.indexPathForSelectedRow else { return }
-                detailPersonVC.person = persons[indexPath.row]
-            }
-            
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let detailPersonVC = segue.destination as? DetailPersonViewController {
+            guard let indexPath = tableView.indexPathForSelectedRow else { return }
+            detailPersonVC.person = persons[indexPath.row]
         }
-
+        
+    }
 }

@@ -7,35 +7,57 @@
 
 import UIKit
 
+
 class DetailListViewController: UITableViewController {
     
-    var pesons: [Person]!
+    var persons: [Person]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
 
     }
 
-    // MARK: - Table view data source
+//MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        pesons.count
+        persons.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       
-        return 0
+        3
     }
 
    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(
+        _ tableView: UITableView,
+        cellForRowAt indexPath: IndexPath
+    ) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "personsDetail", for: indexPath)
-
-      
-
+     
+        var content = cell.defaultContentConfiguration()
+        
+        switch indexPath.row {
+        case 0:
+            content.text = persons[indexPath.section].fullName
+            content.textProperties.color = .gray
+        case 1:
+            content.text = persons[indexPath.section].telephone
+            content.textProperties.font = UIFont(name: "Helvetica", size: 20)
+            ?? UIFont()
+            content.image = UIImage(systemName: "phone")
+            
+        default:
+            content.text = persons[indexPath.section].email
+            content.textProperties.font = UIFont(name: "Helvetica", size: 20)
+            ?? UIFont()
+            content.image = UIImage(systemName: "tray")
+        }
+        
+        cell.contentConfiguration = content
+        
         return cell
     }
-
-
 }
+
